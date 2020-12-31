@@ -1,10 +1,10 @@
 # Python Grammer Cheatsheets
 
-# While
+## While
 
 ```py
 cur = 1
-while cur < 5:
+while cur < 3:
     print(cur)
     cur += 1
     
@@ -12,17 +12,14 @@ while cur < 5:
 Output:
 1
 2
-3
-4
-5
 '''
 ```
 
-# While-Else 
+## While-Else 
 
 ```py
 cur = 1
-while cur < 5:
+while cur < 3:
     print(cur)
     cur += 1
 else:
@@ -33,17 +30,15 @@ Output:
 1
 2
 3
-4
-5
 '''
 ```
 
-# While with Break
+## While with Break
 
 ```py
 cur = 1
 while True:
-    if cur > 5:
+    if cur > 3:
         break
     print(cur)
     cur += 1
@@ -53,7 +48,5 @@ Output:
 1
 2
 3
-4
-5
 '''
 ```
