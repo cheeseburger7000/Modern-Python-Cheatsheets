@@ -1,15 +1,59 @@
-# Python Crash Course
+# Python Grammer Cheatsheets
 
-Content:
+# While
 
-- ch02
-    - numbers
-    - strings
-- ch03
-    - lists
-- ch04
-    - list-with-loop
-    - slice-list
-    - copy-list
-    - tuples
-    - style-guide
+```py
+cur = 1
+while cur < 5:
+    print(cur)
+    cur += 1
+    
+'''
+Output:
+1
+2
+3
+4
+5
+'''
+```
+
+# While-Else 
+
+```py
+cur = 1
+while cur < 5:
+    print(cur)
+    cur += 1
+else:
+    print(cur)
+
+'''
+Output:
+1
+2
+3
+4
+5
+'''
+```
+
+# While with Break
+
+```py
+cur = 1
+while True:
+    if cur > 5:
+        break
+    print(cur)
+    cur += 1
+
+'''
+Output:
+1
+2
+3
+4
+5
+'''
+```
