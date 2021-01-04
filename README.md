@@ -400,6 +400,7 @@ def output_html_todo_list():
 
 
 output_html_todo_list()
+
 '''
 Output:
 <ul><li>Read Book</li><li>Watch Show</li><li>Cook</li></ul>
