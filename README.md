@@ -434,3 +434,16 @@ lst = [n for n in range(1, 5)]
 result = reduce(lambda x, y: x + y, lst) # 10
 result = reduce(lambda x, y: x * y, lst) # 24
 ```
+
+# Python Error Types
+
+1. SyntaxError
+2. NameError
+3. IndexError
+4. ModuleNotFoundError
+5. AttributeError
+6. KeyError
+7. TypeError
+8. ImportError
+9. ValueError
+10. ZeroDivisionError
