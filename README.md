@@ -447,3 +447,100 @@ result = reduce(lambda x, y: x * y, lst) # 24
 8. ImportError
 9. ValueError
 10. ZeroDivisionError
+
+# Collection Related Operations
+
+## Unpacking Lists
+
+```py
+def sum_of_five_nums(a, b, c, d, e):
+    return a + b + c + d + e
+
+lst = [1, 2, 3, 4, 5]
+print(sum_of_five_nums(*lst))  # 15
+```
+
+Unpacking lists for varilable.
+
+```py
+countries = ['Finland', 'Sweden', 'Norway', 'Denmark', 'Iceland']
+fin, sw, nor, *rest = countries
+print(fin, sw, nor, rest)   # Finland Sweden Norway ['Denmark', 'Iceland']
+
+
+numbers = [1, 2, 3, 4, 5, 6, 7]
+one, *middle, last = numbers
+print(one, middle, last)      #  1 [2, 3, 4, 5, 6] 7
+```
+
+## Unpacking Dictionaries
+
+```py
+def unpacking_person_info(name, country, city, age):
+    return '{name} lives in {country}, {city}. He is {age} year old.'
+
+dct = {'name':'Asabeneh', 'country':'Finland', 'city':'Helsinki', 'age': 250}
+print(unpacking_person_info(**dct)) # Asabeneh lives in Finland, Helsinki. He is 250 years old.
+```
+
+## Packing Lists
+
+```py
+def sum_all(*args):
+    s = 0
+    for i in args:
+        s += i
+    return s
+
+      
+print(sum_all(1, 2, 3, 4, 5, 6, 7))
+```
+
+## Packing Dictionaries
+
+```py
+def packing_person_info(**kwargs):
+    # print(type(kwargs))
+    for key in kwargs:
+        print("{key} = {kwargs[key]}")
+    return kwargs
+
+print(packing_person_info(name="Asabeneh", country="Finland", city="Helsinki", age=250))
+```
+
+## Spreading
+
+```py
+lst_one = [1, 2, 3]
+lst_two = [4, 5, 6,7]
+lst = [0, *list_one, *list_two]
+print(lst) # [0, 1, 2, 3, 4, 5, 6, 7]
+
+country_lst_one = ['Finland', 'Sweden', 'Norway']
+country_lst_two = ['Denmark', 'Iceland']
+nordic_countries = [*country_lst_one, *country_lst_two]
+print(nordic_countries) # ['Finland', 'Sweden', 'Norway', 'Denmark', 'Iceland']
+```
+
+## Enumerate
+
+```py
+for index, i in enumerate(countries):
+    print('hi')
+    if i == 'Finland':
+        print('The country {i} has been found at index {index}')
+```
+
+## Zip
+
+todo for Illustrating
+
+```py
+fruits = ['banana', 'orange', 'mango', 'lemon']                    
+vegetables = ['Tomato', 'Potato', 'Cabbage','Onion', 'Carrot']
+fruits_and_veges = []
+for f, v in zip(fruits, vegetables):
+    fruits_and_veges.append({'fruit':f, 'veg':v})
+
+print(fruits_and_veges)
+```
