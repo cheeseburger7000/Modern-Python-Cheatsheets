@@ -274,3 +274,56 @@ from random import random, randint
 print(random()) # returns a value between 0 and 0.9999
 print(randint(5, 20)) # returns a random integer number between 5 and 20
 ```
+
+# List Comprehension
+
+A faster, short way to create a new list from a sequence then using the for loop. Syntax: `[i for i in iterable if expression]`
+
+## Change a string to a list of characters
+
+```py
+language = 'React'
+lst = [ch for ch in language]
+print(lst) # ['R', 'e', 'a', 'c', 't']
+```
+
+## Generate a list of numbers.
+
+```py
+lst = [n for n in range(0, 5)]
+print(lst) # 0 1 2 3 4
+```
+
+## Combined with if expression
+
+```py
+even_numbers = [n for n in range(0, 10) if n % 2 == 0]
+print(even_numbers) # [0, 2, 4, 6, 8]
+```
+
+# Lambda Function 
+
+Lambda function is a small anonymous function without a name. Syntax: `x = lambda param1, param2: param1 + param2`, execute `x(arg1, arg2)`.
+
+```py
+add_two_nums = lambda a, b: a + b
+result = add_two_nums(2,3)
+print(result) # 5
+```
+
+## Self invoking lambda function
+
+```py
+result = (lambda a, b: a + b)(2,3)
+print(result) # 5
+```
+
+## Lambda Function Inside Another Function
+
+```py
+def power(x):
+    return lambda n : x ** n
+
+cube = power(2)(3)
+print(cube) # 8
+```
