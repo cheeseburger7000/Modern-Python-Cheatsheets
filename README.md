@@ -327,3 +327,105 @@ def power(x):
 cube = power(2)(3)
 print(cube) # 8
 ```
+
+# Higher Order Functions
+
+## Function as a Parameter
+
+todo
+
+## Function as a Return Value
+
+todo
+
+## Closures
+
+Python allows a nested function to access the outer scope of the enclosing function. This is is known as a Closure(闭包).
+
+```py
+def add_ten():
+    ten = 10
+
+    def add(num):
+        return num + ten
+    return add
+
+closure_result = add_ten()
+print(closure_result(5))  # 15
+print(closure_result(10))  # 20
+```
+
+
+## Decorators
+
+A decorator is a design pattern in Python that allows a user to add new functionality to an existing object without modifying its structure.(AOP)
+
+```py
+def title_list(function):
+    def wrapper():
+        result = []
+        items = function()
+        for item in items:
+            result.append(item.title())
+        return result
+    return wrapper
+
+
+def html_li_tag(function):
+    def wrapper():
+        result = ''
+        items = function()
+        for item in items:
+            result += f'<li>{item}</li>'
+        return result
+    return wrapper
+
+
+def html_ul_tag(function):
+    def wrapper():
+        lis = function()
+        return f'<ul>{lis}</ul>'
+    return wrapper
+
+
+@html_ul_tag
+@html_li_tag
+@title_list
+def todo_items():
+    return ['read book', 'watch show', 'cook']
+
+
+def output_html_todo_list():
+	print(todo_items())
+
+
+output_html_todo_list()
+```
+
+## Built-in Higher Order Functions
+
+### map
+
+```py
+lst = [n for n in range(0, 5)]
+result = map(lambda x: x * 3, lst)
+print(list(result))
+```
+
+### filter
+
+```py
+lst = [n for n in range(0, 5)]
+result = filter(lambda x: x % 2 == 0, lst)
+print(list(result))
+```
+
+### reduce
+
+```py
+from functools import reduce
+
+lst = [n for n in range(1, 5)]
+result = reduce(lambda x, y: x + y, lst) # 10
+result = reduce(lambda x, y: x * y, lst) # 24
+```
