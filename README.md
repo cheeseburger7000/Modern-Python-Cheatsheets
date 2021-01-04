@@ -128,3 +128,149 @@ name = 'luca'
 print(outputNameByHandler(htmlNameHandler, name))
 print(outputNameByHandler(standardNameHandler, name))
 ```
+
+# Module
+
+## Import Functions from Module
+
+Creating a person Module, includes function: `printName` and `printAge`.
+
+```py 
+# person.py
+def printName(name):
+	print(f'Name is {name.title()}.')
+
+def printAge(age):
+	print(f'Age is {age}.')
+
+def printAddress(address):
+	print(f'Address is {address.title()}.')
+```
+
+You can use `import` keyword to import all content.
+
+```py
+# main.py
+import person
+
+person.printName('luca')
+person.printAge(22)
+```
+
+Or you can use `from Module import Function` keyword to import specified function like this.
+
+```py
+from person import printName, printAge
+
+printName('luca')
+printAge(22)
+```
+
+## Import Classes from Modlue
+
+Create a class Person inside person module.
+
+```py
+# person.py
+class Person:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+    
+    def info(self):
+        print(f'My name is {self.name.title()}, age is {self.age}.')
+```
+
+Use `import` keyword import all content.
+
+```py
+import person
+
+p = person.Person('luca', 22)
+p.info()
+```
+
+Or you can use `from Module import Class` import specified class.
+
+```py
+# main.py
+from person import Person 
+
+p = Person('luca', 22)
+p.info()
+```
+
+## Alias Module
+
+Rename the name of the module.
+
+```py
+import person as p
+
+p.printName()
+```
+
+Rename the name of the specified class or function.
+
+```py
+from person import printName as pName, Person as p
+
+# function
+name = 'luca'
+pName(name)
+
+# class
+luca = p(name, 22)
+luca.info()
+```
+
+## Build-in Modules
+
+
+### OS Module
+
+```py
+import os
+
+path = 'new_directory'
+os.mkdir(path)
+os.chdir(path)
+print(os.getcwd())
+os.rmdir(path)
+```
+
+### Sys Module
+
+```py
+import sys
+
+# Get the argument passed from the command line.
+print(f'Welcome {sys.argv[1]}. Enjoy {sys.argv[2]} challenge!')
+```
+
+### Statistics Module
+
+todo
+
+### Math Module
+
+todo
+
+### String Module
+
+```py
+import string
+
+print(string.ascii_letters) # abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ
+print(string.digits)        # 0123456789
+print(string.punctuation)   # !"#$%&'()*+,-./:;<=>?@[\]^_`{|}~
+```
+
+### Random Module
+
+```py
+from random import random, randint
+
+print(random()) # returns a value between 0 and 0.9999
+print(randint(5, 20)) # returns a random integer number between 5 and 20
+```
