@@ -23,17 +23,17 @@ while cur < 3:
     print(cur)
     cur += 1
 else:
-    print(cur)
+    print('else block output: ' + str(cur))
 
 '''
 Output:
 1
 2
-3
+else block output: 3
 '''
 ```
 
-## While with Break
+## While with Break and Continue
 
 ```py
 cur = 1
