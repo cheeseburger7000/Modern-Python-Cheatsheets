@@ -547,6 +547,22 @@ int('12a')
 # ZeroDivisionError: division by zero
 ```
 
+# try-except-else-finally
+
+```py
+n = input('Please input a number: ')
+try:
+    result = 1/int(n)
+except ZeroDivisionError:
+    print('You cannot do 1/0')
+except ValueError:
+    print('illegal value: ', n)
+else:
+    print('result: ' + str(result))
+finally:
+    print('exit')
+```
+
 # Collection Related Operations
 
 ## Unpacking Lists
