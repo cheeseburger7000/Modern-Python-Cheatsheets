@@ -437,16 +437,115 @@ result = reduce(lambda x, y: x * y, lst) # 24
 
 # Python Error Types
 
-1. SyntaxError
-2. NameError
-3. IndexError
-4. ModuleNotFoundError
-5. AttributeError
-6. KeyError
-7. TypeError
-8. ImportError
-9. ValueError
-10. ZeroDivisionError
+## SyntaxError
+
+```py
+print 'halo'
+# SyntaxError: Missing parentheses in call to 'print'. Did you mean print('halo')?
+
+
+print('halo')
+'''
+Output:
+halo
+'''
+```
+
+## NameError
+
+```py
+print(age)
+# NameError: name 'age' is not defined
+
+
+age = 22
+print(age)
+'''
+Output:
+22
+'''
+```
+
+## IndexError
+
+```py
+numbers = [1, 2, 3, 4, 5]
+numbers[5]
+# IndexError: list index out of range
+```
+
+## ModuleNotFoundError
+
+```py
+import maths
+# ModuleNotFoundError: No module named 'maths'
+
+
+import math
+```
+
+## AttributeError
+
+```py
+import math
+print(math.PI)
+# AttributeError: module 'math' has no attribute 'PI'
+
+
+print(math.pi)
+# 3.141592653589793
+```
+
+## KeyError
+
+```py
+users = {'name':'Asab', 'age':250, 'country':'Finland'}
+users['county']
+# KeyError: 'county'
+
+
+users['country']
+# Finland
+```
+
+## TypeError
+
+```py
+4 + '3'
+# TypeError: unsupported operand type(s) for +: 'int' and 'str'
+
+
+4 + int('3')
+# 7
+4 + float('3')
+# 7.0
+```
+
+## ImportError
+
+```py
+from math import power
+# ImportError: cannot import name 'power' from 'math'
+
+
+from math import pow
+pow(2,3)
+# 8.0
+```
+
+## ValueError
+
+```py
+int('12a')
+# ValueError: invalid literal for int() with base 10: '12a'
+```
+
+## ZeroDivisionError
+
+```py
+1/0
+# ZeroDivisionError: division by zero
+```
 
 # Collection Related Operations
 
