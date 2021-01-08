@@ -1,4 +1,55 @@
-# Python Grammer Cheatsheets
+# Modern Python Cheatsheets
+
+## Table of Contents
+
+- [While](#while)
+    - [While-Else](#while-else)
+    - [While with Break and Continue](#while-with-break-and-continue)
+- [Function](#function)
+    - [Declare/Call/Parameters/Return Value](#declare/call/parameters/return-value)
+    - [K-V Arguments](#k-v-arguments)
+    - [Default Value of Parameters](#default-value-of-parameters)
+    - [Arbitrary Number of Arguments](#arbitrary-number-of-arguments)
+    - [Arbitrary Keyword Arguments](#arbitrary-keyword-arguments)
+    - [Callback Function](#callback-function)
+- [Module](#module)
+    - [Import Functions from Module](#import-functions-from-module)
+    - [Import Classes from Modlue](#import-classes-from-modlue)
+    - [Alias Module](#alias-module)
+    - [Build-in Modules](#build-in-modules)
+- [List Comprehension](#list-comprehension)
+    - [Change a string to a list of characters](#change-a-string-to-a-list-of-characters)
+    - [Generate a list of numbers](#generate-a-list-of-numbers)
+    - [Combined with if expression](#combined-with-if-expression)
+- [Lambda Function](#lambda-function)
+    - [Self invoking lambda function](#self-invoking-lambda-function)
+    - [Lambda Function Inside Another Function](#lambda-function-inside-another-function)
+- [Higher Order Functions](#higher-order-functions)
+    - [Function as a Parameter](#function-as-a-parameter)
+    - [Function as a Return Value](#-function-as-a-return-value)
+    - [Closures](#closures)
+    - [Decorators](#decorators)
+    - [Built-in Higher Order Functions](#built-in-higher-order-functions)
+- [Python Error Types](#python-error-types)    
+    - [SyntaxError](#syntaxerror)
+    - [NameError](#nameerror)
+    - [IndexError](#indexError)
+    - [ModuleNotFoundError](#modulenotfounderror)
+    - [AttributeError](#attributeerror)
+    - [KeyError](#keyerror)
+    - [TypeError](#typeerror)
+    - [ImportError](#importerror)
+    - [ValueError](#valueerror)
+    - [ZeroDivisionError](#zerodivisionerror)
+- [try-except-else-finally](#try-except-else-finally)
+- [Collection Related Operations](#collection-related-operations)
+    - [Unpacking Lists](#unpacking-lists)
+    - [Unpacking Dictionaries](#unpacking-dictionaries)
+    - [Packing Lists](#packing-lists)
+    - [Packing Dictionaries](#packing-dictionaries)
+    - [Spreading](#spreading)
+    - [Enumerate](#enumerate)
+    - [Zip](#zip)
 
 ## While
 
@@ -15,7 +66,7 @@ Output:
 '''
 ```
 
-## While-Else 
+### While-Else 
 
 ```py
 cur = 1
@@ -33,7 +84,7 @@ else block output: 3
 '''
 ```
 
-## While with Break and Continue
+### While with Break and Continue
 
 ```py
 cur = 1
@@ -51,9 +102,11 @@ Output:
 '''
 ```
 
-# Function
+**[⬆ Back to Top](#table-of-contents)**
 
-## Declare/Call/Parameters/Return Value
+## Function
+
+### Declare/Call/Parameters/Return Value
 
 ```py
 def getName(first_name, last_name):
@@ -63,7 +116,7 @@ def getName(first_name, last_name):
 getName('Shaohsiung', 'Yeung')
 ```
 
-## K-V Arguments
+### K-V Arguments
 
 ```py
 def getName(first_name, last_name):
@@ -74,7 +127,7 @@ getName(first_name='Shaohsiung', last_name='Yeung')
 getName(last_name='Yeung', first_name='Shaohsiung')
 ```
 
-## Default Value of Parameters
+### Default Value of Parameters
 
 ```py
 def getName(first_name, last_name, middle_name = ''):
@@ -88,7 +141,7 @@ getName('Shaohsiung', 'Yeung')
 getName('Shaohsiung', 'Yeung', 'J')
 ```
 
-## Arbitrary Number of Arguments
+### Arbitrary Number of Arguments
 
 ```py
 def order_pizza(inch, *toppings):
@@ -100,7 +153,7 @@ def order_pizza(inch, *toppings):
 order_pizza(18, 'egg', 'pepper', 'cheese')
 ```
 
-## Arbitrary Keyword Arguments
+### Arbitrary Keyword Arguments
 
 ```py
 def printUserInfo(user_id, **user_info):
@@ -111,7 +164,9 @@ def printUserInfo(user_id, **user_info):
 printUserInfo(7, user_name='luca', age=22)
 ```
 
-## Callback Function
+**[⬆ Back to Top](#table-of-contents)**
+
+### Callback Function
 
 ```py
 def outputNameByHandler(handler, name):
@@ -129,9 +184,11 @@ print(outputNameByHandler(htmlNameHandler, name))
 print(outputNameByHandler(standardNameHandler, name))
 ```
 
-# Module
+**[⬆ Back to Top](#table-of-contents)**
 
-## Import Functions from Module
+## Module
+
+### Import Functions from Module
 
 Creating a person Module, includes function: `printName` and `printAge`.
 
@@ -166,7 +223,7 @@ printName('luca')
 printAge(22)
 ```
 
-## Import Classes from Modlue
+### Import Classes from Modlue
 
 Create a class Person inside person module.
 
@@ -200,7 +257,7 @@ p = Person('luca', 22)
 p.info()
 ```
 
-## Alias Module
+### Alias Module
 
 Rename the name of the module.
 
@@ -224,10 +281,10 @@ luca = p(name, 22)
 luca.info()
 ```
 
-## Build-in Modules
+### Build-in Modules
 
 
-### OS Module
+#### OS Module
 
 ```py
 import os
@@ -239,7 +296,7 @@ print(os.getcwd())
 os.rmdir(path)
 ```
 
-### Sys Module
+#### Sys Module
 
 ```py
 import sys
@@ -248,15 +305,15 @@ import sys
 print(f'Welcome {sys.argv[1]}. Enjoy {sys.argv[2]} challenge!')
 ```
 
-### Statistics Module
+#### Statistics Module
 
 todo
 
-### Math Module
+#### Math Module
 
 todo
 
-### String Module
+#### String Module
 
 ```py
 import string
@@ -266,7 +323,7 @@ print(string.digits)        # 0123456789
 print(string.punctuation)   # !"#$%&'()*+,-./:;<=>?@[\]^_`{|}~
 ```
 
-### Random Module
+#### Random Module
 
 ```py
 from random import random, randint
@@ -275,11 +332,13 @@ print(random()) # returns a value between 0 and 0.9999
 print(randint(5, 20)) # returns a random integer number between 5 and 20
 ```
 
-# List Comprehension
+**[⬆ Back to Top](#table-of-contents)**
+
+## List Comprehension
 
 A faster, short way to create a new list from a sequence then using the for loop. Syntax: `[i for i in iterable if expression]`
 
-## Change a string to a list of characters
+### Change a string to a list of characters
 
 ```py
 language = 'React'
@@ -287,21 +346,23 @@ lst = [ch for ch in language]
 print(lst) # ['R', 'e', 'a', 'c', 't']
 ```
 
-## Generate a list of numbers.
+### Generate a list of numbers
 
 ```py
 lst = [n for n in range(0, 5)]
 print(lst) # 0 1 2 3 4
 ```
 
-## Combined with if expression
+### Combined with if expression
 
 ```py
 even_numbers = [n for n in range(0, 10) if n % 2 == 0]
 print(even_numbers) # [0, 2, 4, 6, 8]
 ```
 
-# Lambda Function 
+**[⬆ Back to Top](#table-of-contents)**
+
+## Lambda Function 
 
 Lambda function is a small anonymous function without a name. Syntax: `x = lambda param1, param2: param1 + param2`, execute `x(arg1, arg2)`.
 
@@ -311,14 +372,14 @@ result = add_two_nums(2,3)
 print(result) # 5
 ```
 
-## Self invoking lambda function
+### Self invoking lambda function
 
 ```py
 result = (lambda a, b: a + b)(2,3)
 print(result) # 5
 ```
 
-## Lambda Function Inside Another Function
+### Lambda Function Inside Another Function
 
 ```py
 def power(x):
@@ -328,17 +389,19 @@ cube = power(2)(3)
 print(cube) # 8
 ```
 
-# Higher Order Functions
+**[⬆ Back to Top](#table-of-contents)**
 
-## Function as a Parameter
+## Higher Order Functions
 
-todo
-
-## Function as a Return Value
+### Function as a Parameter
 
 todo
 
-## Closures
+### Function as a Return Value
+
+todo
+
+### Closures
 
 Python allows a nested function to access the outer scope of the enclosing function. This is is known as a Closure(闭包).
 
@@ -355,8 +418,7 @@ print(closure_result(5))  # 15
 print(closure_result(10))  # 20
 ```
 
-
-## Decorators
+### Decorators
 
 A decorator is a design pattern in Python that allows a user to add new functionality to an existing object without modifying its structure.(AOP)
 
@@ -407,9 +469,9 @@ Output:
 '''
 ```
 
-## Built-in Higher Order Functions
+### Built-in Higher Order Functions
 
-### map
+#### map
 
 ```py
 lst = [n for n in range(0, 5)]
@@ -417,7 +479,7 @@ result = map(lambda x: x * 3, lst)
 print(list(result))
 ```
 
-### filter
+#### filter
 
 ```py
 lst = [n for n in range(0, 5)]
@@ -425,7 +487,7 @@ result = filter(lambda x: x % 2 == 0, lst)
 print(list(result))
 ```
 
-### reduce
+#### reduce
 
 ```py
 from functools import reduce
@@ -435,9 +497,11 @@ result = reduce(lambda x, y: x + y, lst) # 10
 result = reduce(lambda x, y: x * y, lst) # 24
 ```
 
-# Python Error Types
+**[⬆ Back to Top](#table-of-contents)**
 
-## SyntaxError
+## Python Error Types
+
+### SyntaxError
 
 ```py
 print 'halo'
@@ -451,7 +515,7 @@ halo
 '''
 ```
 
-## NameError
+### NameError
 
 ```py
 print(age)
@@ -466,7 +530,7 @@ Output:
 '''
 ```
 
-## IndexError
+### IndexError
 
 ```py
 numbers = [1, 2, 3, 4, 5]
@@ -474,7 +538,7 @@ numbers[5]
 # IndexError: list index out of range
 ```
 
-## ModuleNotFoundError
+### ModuleNotFoundError
 
 ```py
 import maths
@@ -484,7 +548,7 @@ import maths
 import math
 ```
 
-## AttributeError
+### AttributeError
 
 ```py
 import math
@@ -496,7 +560,7 @@ print(math.pi)
 # 3.141592653589793
 ```
 
-## KeyError
+### KeyError
 
 ```py
 users = {'name':'Asab', 'age':250, 'country':'Finland'}
@@ -508,7 +572,7 @@ users['country']
 # Finland
 ```
 
-## TypeError
+### TypeError
 
 ```py
 4 + '3'
@@ -521,7 +585,7 @@ users['country']
 # 7.0
 ```
 
-## ImportError
+### ImportError
 
 ```py
 from math import power
@@ -533,21 +597,23 @@ pow(2,3)
 # 8.0
 ```
 
-## ValueError
+### ValueError
 
 ```py
 int('12a')
 # ValueError: invalid literal for int() with base 10: '12a'
 ```
 
-## ZeroDivisionError
+### ZeroDivisionError
 
 ```py
 1/0
 # ZeroDivisionError: division by zero
 ```
 
-# try-except-else-finally
+**[⬆ Back to Top](#table-of-contents)**
+
+## try-except-else-finally
 
 ```py
 n = input('Please input a number: ')
@@ -563,9 +629,11 @@ finally:
     print('exit')
 ```
 
-# Collection Related Operations
+**[⬆ Back to Top](#table-of-contents)**
 
-## Unpacking Lists
+## Collection Related Operations
+
+### Unpacking Lists
 
 ```py
 def sum_of_five_nums(a, b, c, d, e):
@@ -588,7 +656,7 @@ one, *middle, last = numbers
 print(one, middle, last)      #  1 [2, 3, 4, 5, 6] 7
 ```
 
-## Unpacking Dictionaries
+### Unpacking Dictionaries
 
 ```py
 def unpacking_person_info(name, country, city, age):
@@ -598,7 +666,7 @@ dct = {'name':'Asabeneh', 'country':'Finland', 'city':'Helsinki', 'age': 250}
 print(unpacking_person_info(**dct)) # Asabeneh lives in Finland, Helsinki. He is 250 years old.
 ```
 
-## Packing Lists
+### Packing Lists
 
 ```py
 def sum_all(*args):
@@ -611,7 +679,7 @@ def sum_all(*args):
 print(sum_all(1, 2, 3, 4, 5, 6, 7))
 ```
 
-## Packing Dictionaries
+### Packing Dictionaries
 
 ```py
 def packing_person_info(**kwargs):
@@ -623,7 +691,7 @@ def packing_person_info(**kwargs):
 print(packing_person_info(name="Asabeneh", country="Finland", city="Helsinki", age=250))
 ```
 
-## Spreading
+### Spreading
 
 ```py
 lst_one = [1, 2, 3]
@@ -637,7 +705,7 @@ nordic_countries = [*country_lst_one, *country_lst_two]
 print(nordic_countries) # ['Finland', 'Sweden', 'Norway', 'Denmark', 'Iceland']
 ```
 
-## Enumerate
+### Enumerate
 
 ```py
 for index, i in enumerate(countries):
@@ -646,7 +714,7 @@ for index, i in enumerate(countries):
         print('The country {i} has been found at index {index}')
 ```
 
-## Zip
+### Zip
 
 todo for Illustrating
 
@@ -659,3 +727,5 @@ for f, v in zip(fruits, vegetables):
 
 print(fruits_and_veges)
 ```
+
+**[⬆ Back to Top](#table-of-contents)**
