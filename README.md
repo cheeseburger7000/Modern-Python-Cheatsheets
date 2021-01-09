@@ -50,6 +50,7 @@
     - [Spreading](#spreading)
     - [Enumerate](#enumerate)
     - [Zip](#zip)
+- [todo](#todo)
 
 ## While
 
@@ -729,3 +730,7 @@ print(fruits_and_veges)
 ```
 
 **[⬆ Back to Top](#table-of-contents)**
+
+## todo
+
+- [Python Style Guide](https://python-guide.gitbooks.io/python-style-guide/content/style-guide/code.html)
