@@ -50,6 +50,18 @@
     - [Spreading](#spreading)
     - [Enumerate](#enumerate)
     - [Zip](#zip)
+- [File Handling](#file-handling)
+    - [Opening Files for Reading](#opening-files-for-reading)
+    - [Using with to close file automatically](#using-with-to-close-file-automatically)
+    - [Opening Files for Overwrite or Append](#opening-files-for-aoverwrite-or-append)
+    - [Deleting Files](#deleting-files)
+- [File Types](#file-types)
+    - [json](#json)
+    - [csv](#csv)
+    - [xlsx](#xlsx)
+    - [xml](#xml)
+- [PIP](#pip)
+    - [Package](#package)
 
 ## While
 
@@ -727,5 +739,164 @@ for f, v in zip(fruits, vegetables):
 
 print(fruits_and_veges)
 ```
+
+**[⬆ Back to Top](#table-of-contents)**
+
+## File Handling
+
+Syntax: `open('filename', model)`. Mode: r for read, a for append, w for write, x for create, t for text, b for binary.
+
+### Opening Files for Reading
+
+```py
+f = open('words.txt') # default mode: rt
+all_txt = f.read()
+first_10_chars = f.read(10)
+lines = f.readlines()
+print(type(lines)) # lst
+f.close()
+```
+
+### Using with to close file automatically
+
+```py
+with open('words.txt') as f:
+    lines = f.read()
+```
+
+### Opening Files for Overwrite or Append 
+
+Overwrite:
+
+```py
+with open('words.txt', 'w') as f:
+    f.write('create a new file, if the file does not exists.')
+```
+
+Append:
+
+```py
+with open('words.txt', 'a') as f:
+    f.write('will append to the end of the file, if the file does not exist it raise FileNotFoundError')
+```
+
+### Deleting Files
+
+```py
+import os 
+
+if os.path.exist('words.txt'):
+    os.remove('words.txt')
+```
+
+**[⬆ Back to Top](#table-of-contents)**
+
+## File Types
+
+### json
+
+JSON to Dictionary
+
+```py
+import json
+
+person_json = '''{
+    "name": "luca",
+    "country": "America",
+    "city": "Texas",
+    "skills": ["JavaScrip", "React", "Python", "Go", "Java"]
+}'''
+
+person_dict = json.loads(person_json)
+print(person_dict['name'])
+```
+
+Dictionary to JSON
+
+```py
+import json
+
+person = {
+    "name": "luca",
+    "country": "America",
+    "city": "Texas",
+    "skills": ["JavaScrip", "React", "Python", "Go", "Java"]
+}
+
+person_json = json.dumps(person, indent=4)
+print(type(person_json)) # str
+```
+
+Saving as JSON File
+
+```py
+import json 
+
+person = {
+    "name": "luca",
+    "country": "America",
+    "city": "Texas",
+    "skills": ["JavaScrip", "React", "Python", "Go", "Java"]
+}
+with open('person.json', 'w', encoding='utf-8') as f:
+    json.dump(person, f, ensure_ascii=False, indent=4)
+```
+
+### csv
+
+persons.csv
+
+```csv
+"name","country","city","skills"
+"Luca","America","Texas","JavaScrip"
+```
+
+Reading csv file 
+
+```py
+import csv 
+
+with open('persons.csv') as f:
+    csv_reader = csv.readr(f, delimiter=',')
+    for row in csv_reader:
+        print(f'{row[0]}, {row[1]}, {row[2]}.')
+```
+
+### xlsx
+
+todo xlrd
+
+### xml
+
+todo 
+
+**[⬆ Back to Top](#table-of-contents)**
+
+## PIP
+
+We use pip to install different python packages. 
+
+Package is a python module that can contain one or more modules or other packages. 
+
+```bash
+pip --version
+
+pip install numpy
+
+pip show numpy
+pip show --verbose numpy
+
+pip uninstall numpy
+
+# See the installed packages on our machine
+pip list
+
+# Generate output suitable for a requirements file
+pip freeze > requirements.txt
+```
+
+### Package
+
+todo 
 
 **[⬆ Back to Top](#table-of-contents)**
