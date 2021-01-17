@@ -62,6 +62,7 @@
     - [xml](#xml)
 - [PIP](#pip)
     - [Package](#package)
+- [todo](#todo)
 
 ## While
 
@@ -900,3 +901,7 @@ pip freeze > requirements.txt
 todo 
 
 **[⬆ Back to Top](#table-of-contents)**
+
+## todo
+
+- [Python Style Guide](https://python-guide.gitbooks.io/python-style-guide/content/style-guide/code.html)
